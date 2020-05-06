@@ -1,4 +1,4 @@
-package data.dataKeeper;
+package gui.Listeners;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,10 +10,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 
+import data.dataKeeper.GlobalDataKeeper;
 import gui.tableElements.commons.JvTable;
 import gui.tableElements.tableConstructors.TableConstructionAllSquaresIncluded;
 import gui.dialogs.ParametersJDialog;
 import gui.mainEngine.DetailedTableModel;
+import gui.mainEngine.GeneralTablePhases;
 import gui.mainEngine.Gui;
 import gui.tableElements.tableConstructors.TableConstructionIDU;
 import gui.tableElements.tableConstructors.TableConstructionPhases;
@@ -153,7 +155,7 @@ public class TableListener extends JFrame implements ActionListener {
 							finalColumns=columns;
 							finalRows=rows;
 							tabbedPane.setSelectedIndex(0);
-							gui.makeGeneralTablePhases();
+							new GeneralTablePhases(gui);
 							gui.fillPhasesTree();
 						} else {
 							JOptionPane.showMessageDialog(null, "Extract Phases first");
@@ -225,7 +227,7 @@ public class TableListener extends JFrame implements ActionListener {
 							finalColumns=columns;
 							finalRows=rows;
 							tabbedPane.setSelectedIndex(0);
-							gui.makeGeneralTablePhases();
+							new GeneralTablePhases(gui);
 							gui.fillClustersTree();
 						}
 						else{
