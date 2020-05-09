@@ -1,0 +1,6 @@
+typo3
+filesHandler/datasets/Typo3.txt
+filesHandler/input/typo3.csv
+filesHandler/output/typo3_Assessment1.txt
+filesHandler/output/typo3_Assessment2.txt
+filesHandler/transitions/typo3Transitions.xml
