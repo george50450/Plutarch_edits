@@ -37,12 +37,9 @@ public class InfoListener implements ActionListener {
 		
 		showInfo();
 		Help();
-	
 	}
 	
-	
-	public void Help()
-	{
+	public void Help() {
 		JButton buttonHelp=new JButton("Help");
 		buttonHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -65,8 +62,7 @@ public class InfoListener implements ActionListener {
 	}
 	
 
-	public void showInfo()
-	{
+	public void showInfo() {
 		mnProject = new JMenu("Project");
 		menuBar.add(mnProject);
 		
@@ -98,15 +94,10 @@ public class InfoListener implements ActionListener {
 							globalDataKeeper.getAllPPLTransitions().size(), globalDataKeeper.getAllPPLTables().size());
 					
 					infoDialog.setVisible(true);
-				}
-				else{
+				} else {
 					JOptionPane.showMessageDialog(null, "Select a Project first");
 					return;
-				}
-				
-				
-				
-				
+				}	
 			}
 		});
 		
@@ -114,8 +105,7 @@ public class InfoListener implements ActionListener {
 	}
 	
 	
-	public void getDataFromGui()
-	{
+	public void getDataFromGui() {
 		currentProject = gui.getCurrentProject();
 		projectName = gui.getProjectName();
 		datasetTxt = gui.getDatasetTxt();

@@ -191,7 +191,10 @@ public class Gui extends JFrame implements ActionListener{
 		JMenu mnFile = new JMenu("File");
 		menuBar.add(mnFile);
 		
-		new FileListener(this, mnFile);
+		FileListener fileListener =new FileListener(this, mnFile);
+		fileListener.CreateProject();
+		fileListener.LoadProject();
+		fileListener.EditProject();
 		
 		// ======================================================================
 		JMenu mnTable = new JMenu("Table");
@@ -312,7 +315,6 @@ public class Gui extends JFrame implements ActionListener{
 		zoomInButton.setBounds(1000, 560, 100, 30);
 		
 		
-		
 		zoomInButton.addMouseListener(new MouseAdapter() {
 			@Override
 			   public void mouseClicked(MouseEvent e) {
@@ -338,7 +340,6 @@ public class Gui extends JFrame implements ActionListener{
 					columnWidth=1;
 				}
 				zoomAreaTable.setZoom(rowHeight,columnWidth);
-				
 			}
 		});
 		
@@ -357,7 +358,6 @@ public class Gui extends JFrame implements ActionListener{
 				showEnlargmentPopup.setBounds(100, 100, 1300, 700);
 				
 				showEnlargmentPopup.setVisible(true);
-				
 				
 			}
 		});
@@ -381,7 +381,6 @@ public class Gui extends JFrame implements ActionListener{
 		});
 		
 		undoButton.setVisible(false);
-		
 		
 		uniformlyDistributedButton = new JButton("Same Width"); 
 		uniformlyDistributedButton.setBounds(980, 0, 120, 30);
@@ -1376,7 +1375,7 @@ public void makeZoomAreaTableForCluster() {
 
 	public GlobalDataKeeper getGlobalDataKeeper() {
 		return globalDataKeeper;
-	}	
+	}
 	
 	public String getCurrentProject() {
 		return currentProject;

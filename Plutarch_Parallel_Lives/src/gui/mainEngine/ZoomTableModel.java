@@ -115,24 +115,18 @@ public class ZoomTableModel {
 		}
 		
 		for(int i=0; i<generalTable.getRowCount(); i++){
-				generalTable.setRowHeight(i, rowHeight);
-				
+			generalTable.setRowHeight(i, rowHeight);	
 		}
 
-		
 		generalTable.setShowGrid(false);
 		generalTable.setIntercellSpacing(new Dimension(0, 0));
 		
 		
-		
 		for(int i=0; i<generalTable.getColumnCount(); i++){
 			if(i==0){
-				generalTable.getColumnModel().getColumn(0).setPreferredWidth(columnWidth);
-				
-			}
-			else{
+				generalTable.getColumnModel().getColumn(0).setPreferredWidth(columnWidth);	
+			} else {
 				generalTable.getColumnModel().getColumn(i).setPreferredWidth(columnWidth);
-				
 			}
 		}
 		
@@ -144,7 +138,6 @@ public class ZoomTableModel {
 		}
 
 
-		
 		if(wholeCol!=-1){
 			for(int i=0; i<generalTable.getColumnCount(); i++){
 				if(!(generalTable.getColumnName(i).equals("Table name"))){
@@ -157,13 +150,10 @@ public class ZoomTableModel {
 		}
 		
 		final IDUTableRenderer renderer = new IDUTableRenderer(gui,finalRowsZoomArea, globalDataKeeper, segmentSize);
-		//generalTable.setDefaultRenderer(Object.class, renderer);
-		
 		
 		
 		generalTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer()
-		{
-		    
+		{ 
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -198,8 +188,7 @@ public class ZoomTableModel {
 	        		c.setBackground(cl);
 	        		
 	        		return c;
-		        }
-		        else if(selectedColumnZoomArea==0){
+		        } else if(selectedColumnZoomArea==0){
 		    		
 		        	if (isSelected){
 		        		Color cl = new Color(255,69,0,100);
@@ -215,23 +204,15 @@ public class ZoomTableModel {
 		        		descriptionText.setText(description);
 		        		
 		        		return c;
-		     
 		        	}
-		        }
-		        else{
-
-
+		        } else {
 		        	if(selectedFromTree.contains(finalRowsZoomArea[row][0])){
 
-
 		        		Color cl = new Color(255,69,0,100);
-		        		
 		        		c.setBackground(cl);
 		        		
 		        		return c;
 		        	}
-		        	
-			      
 		        	
 		        	if (isSelected && hasFocus){
 
@@ -253,15 +234,12 @@ public class ZoomTableModel {
 			        					getNumberOfDeletionsForOneTr(Integer.parseInt(table.getColumnName(column)))+"\n";
 			        			description=description+"Updates:"+globalDataKeeper.getAllPPLTables().get(finalRowsZoomArea[row][0]).
 			        					getNumberOfUpdatesForOneTr(Integer.parseInt(table.getColumnName(column)))+"\n";
-			        			
 			        		} else {
 			        			description=description+"Transition Changes:0"+"\n";
 			        			description=description+"Additions:0"+"\n";
 			        			description=description+"Deletions:0"+"\n";
 			        			description=description+"Updates:0"+"\n";
-			        			
 			        		}
-			        		
 			        		descriptionText.setText(description);
 		        		}
 		        		Color cl = new Color(255,69,0,100);
@@ -296,27 +274,21 @@ public class ZoomTableModel {
 	        		c.setBackground(insersionColor);
 		        	
 		        	return c;
-		        }
-		        catch(Exception e){
-		        		
+		        } catch(Exception e){
 
 	        		if(tmpValue.equals("")){
 	        			c.setBackground(Color.GRAY);
 	        			return c; 
-	        		}
-	        		else{
+	        		} else {
 	        			if(columnName.contains("v")){
 	        				c.setBackground(Color.lightGray);
 	        				setToolTipText(columnName);
-	        			}
-	        			else{
+	        			} else {
 	        				Color tableNameColor=new Color(205,175,149);
 	        				c.setBackground(tableNameColor);
 	        			}
 		        		return c; 
-	        		}
-		        		
-		        		
+	        		}	
 		        }
 		    }
 		});
@@ -335,7 +307,6 @@ public class ZoomTableModel {
 			         
 			         zoomAreaTable.repaint();
 				}
-				
 			  }
 		});
 		
@@ -399,8 +370,7 @@ public class ZoomTableModel {
 					            }
 					        });
 					        popupMenu.add(showDetailsItem);
-					        popupMenu.show(generalTable, e.getX(),e.getY());
-					    
+					        popupMenu.show(generalTable, e.getX(),e.getY());  
 				}
 		   } 
 		});

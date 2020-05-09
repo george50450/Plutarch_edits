@@ -35,11 +35,9 @@ public class FileListener implements ActionListener {
 	public FileListener(Gui gui, JMenu mnFile) {
 		this.gui = gui;
 		this.mnFile = mnFile;
-		
-		File();
 	}
 	
-	public void File() {
+	public void CreateProject() {
 		
 		JMenuItem mntmCreateProject = new JMenuItem("Create Project");
 		mntmCreateProject.addActionListener(new ActionListener() {
@@ -57,7 +55,7 @@ public class FileListener implements ActionListener {
 					File file = createProjectDialog.getFile();
 		            System.out.println(file.toString());
 		            project=file.getName();
-		            String fileName=file.toString();
+		            fileName=file.toString();
 		            System.out.println("!!"+project);
 		            
 		    		try {
@@ -74,8 +72,9 @@ public class FileListener implements ActionListener {
 			}
 		});
 		mnFile.add(mntmCreateProject);
+	}
 		
-		
+	public void LoadProject() {
 		JMenuItem mntmLoadProject = new JMenuItem("Load Project");
 		mntmLoadProject.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent arg0) {
@@ -92,15 +91,14 @@ public class FileListener implements ActionListener {
 	            project=file.getName();
 	            fileName=file.toString();
 	            System.out.println("!!"+project);
+	            
 			} else {
 				return;
 			}
 		
 			try {
-				gui.importData(fileName);
-				
+				gui.importData(fileName);	
 			} catch (RecognitionException e) {
-				
 				JOptionPane.showMessageDialog(null, "Something seems wrong with this file");
 				return;
 			} catch (IOException e) {
@@ -110,12 +108,13 @@ public class FileListener implements ActionListener {
 		}
 		});
 		mnFile.add(mntmLoadProject);
-		
+	}
+	
+	public void EditProject() {
 		JMenuItem mntmEditProject = new JMenuItem("Edit Project");
 		mntmEditProject.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				String fileName=null;
 				File dir=new File("filesHandler/inis");
 				JFileChooser fcOpen1 = new JFileChooser();
 				fcOpen1.setCurrentDirectory(dir);
@@ -204,7 +203,6 @@ public class FileListener implements ActionListener {
 			}
 		});
 		mnFile.add(mntmEditProject);
-		
 	}
 
 	@Override

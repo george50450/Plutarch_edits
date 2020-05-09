@@ -374,7 +374,6 @@ public class CreateProjectJDialog extends JDialog {
 	}
 	
 	public boolean getConfirmation(){
-		
 		return confirm;
 	}
 	

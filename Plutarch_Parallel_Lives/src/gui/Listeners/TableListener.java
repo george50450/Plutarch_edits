@@ -17,6 +17,7 @@ import gui.dialogs.ParametersJDialog;
 import gui.mainEngine.DetailedTableModel;
 import gui.mainEngine.GeneralTablePhases;
 import gui.mainEngine.Gui;
+import gui.mainEngine.ZoomTableModel;
 import gui.tableElements.tableConstructors.TableConstructionIDU;
 import gui.tableElements.tableConstructors.TableConstructionPhases;
 import gui.tableElements.tableConstructors.TableConstructionWithClusters;
@@ -96,7 +97,7 @@ public class TableListener extends JFrame implements ActionListener {
 					finalColumnsZoomArea=columns;
 					finalRowsZoomArea=rows;
 					tabbedPane.setSelectedIndex(0);
-					gui.makeGeneralTableIDU();
+					new ZoomTableModel(gui);
 					gui.fillTree();
 				} else {
 					JOptionPane.showMessageDialog(null, "Select a Project first");
@@ -156,6 +157,7 @@ public class TableListener extends JFrame implements ActionListener {
 							finalRows=rows;
 							tabbedPane.setSelectedIndex(0);
 							new GeneralTablePhases(gui);
+							//gui.makeGeneralTablePhases();
 							gui.fillPhasesTree();
 						} else {
 							JOptionPane.showMessageDialog(null, "Extract Phases first");
@@ -228,6 +230,7 @@ public class TableListener extends JFrame implements ActionListener {
 							finalRows=rows;
 							tabbedPane.setSelectedIndex(0);
 							new GeneralTablePhases(gui);
+							//gui.makeGeneralTablePhases();
 							gui.fillClustersTree();
 						}
 						else{

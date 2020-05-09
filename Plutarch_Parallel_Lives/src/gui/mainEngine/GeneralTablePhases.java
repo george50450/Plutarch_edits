@@ -46,7 +46,7 @@ public class GeneralTablePhases {
 	private ArrayList<String> selectedFromTree=new ArrayList<String>();
 	private Integer[] segmentSize=new Integer[4];
 	private int[] selectedRowsFromMouse;
-	private ArrayList<String> tablesSelected = new ArrayList<String>(); // maybe needs get...
+	private ArrayList<String> tablesSelected = new ArrayList<String>();
 	private boolean showingPld=false;
 	private JScrollPane tmpScrollPane =new JScrollPane();
 	private JPanel lifeTimePanel = new JPanel();
@@ -60,8 +60,8 @@ public class GeneralTablePhases {
 	private JButton notUniformlyDistributedButton;
 	private Integer[] segmentSizeZoomArea=new Integer[4];
 	
-	Gui gui;
-	GlobalDataKeeper globalDataKeeper;
+	private Gui gui;
+	private GlobalDataKeeper globalDataKeeper;
 	
 	public GeneralTablePhases(Gui gui) {
 		this.gui = gui;
@@ -352,7 +352,7 @@ public class GeneralTablePhases {
 		        System.out.println("Column index selected " + wholeCol + " " + name);
 		        generalTable.repaint();
 		        if (showingPld) {
-			        new ZoomTableModel(gui);
+		        	new ZoomTableModel(gui);
 				}
 		    }
 		});
@@ -372,7 +372,7 @@ public class GeneralTablePhases {
 					            	wholeCol=-1;
 					            	generalTable.repaint();
 					            	if(showingPld){
-					            	     new ZoomTableModel(gui);
+					            		new ZoomTableModel(gui);
 					            	}
 					            }
 					        });
@@ -431,8 +431,7 @@ public class GeneralTablePhases {
 		PldConstruction table;
 		if (selectedColumn==0) {
 			table= new TableConstructionClusterTablesPhasesZoomA(globalDataKeeper,tablesOfCluster);
-		}
-		else{
+		} else {
 			table= new TableConstructionZoomArea(globalDataKeeper,tablesOfCluster,selectedColumn);
 		}
 		final String[] columns=table.constructColumns();
@@ -468,4 +467,5 @@ public class GeneralTablePhases {
 	public JvTable getLifeTimeTable() {
 		return LifeTimeTable;
 	}
+	
 }
