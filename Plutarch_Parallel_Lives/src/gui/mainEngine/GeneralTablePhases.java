@@ -352,7 +352,7 @@ public class GeneralTablePhases {
 		        System.out.println("Column index selected " + wholeCol + " " + name);
 		        generalTable.repaint();
 		        if (showingPld) {
-			        gui.makeGeneralTableIDU();
+			        new ZoomTableModel(gui);
 				}
 		    }
 		});
@@ -372,7 +372,7 @@ public class GeneralTablePhases {
 					            	wholeCol=-1;
 					            	generalTable.repaint();
 					            	if(showingPld){
-					            		gui.makeGeneralTableIDU();
+					            	     new ZoomTableModel(gui);
 					            	}
 					            }
 					        });
