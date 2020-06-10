@@ -11,12 +11,13 @@ import javax.swing.JMenu;
 import org.antlr.v4.runtime.RecognitionException;
 import org.junit.Test;
 
-import gui.Listeners.FileListener;
-import gui.Listeners.TestFileListener;
+import gui.listeners.FileActions;
+import gui.listeners.TestFileListener;
 import gui.mainEngine.Gui;
 import data.dataKeeper.GlobalDataKeeper;
 
 public class LoadData {
+	/*
 	Gui testGui;
 	GlobalDataKeeper globalDataKeeper;
 	String[] projects = {"Atlas"};//,"biosql","coppermine","ensembl","mwiki","opencart","phpBB","typo3"};
@@ -29,7 +30,7 @@ public class LoadData {
 	    testGui = new Gui();
 	    
 	    for (int i=0; i<projects.length; i++) {
-	    	String path = "C:\\Users\\Toni\\Desktop\\Soft&Data_Evol\\Plutarch_Parallel_Lives-master_Refactor\\filesHandler\\inis\\" + projects[i] + ".ini";
+	    	String path = "C:\\Users\\gtkal\\Desktop\\new_test_github\\Plutarch_edits-master\\Plutarch_Parallel_Lives\\filesHandler\\inis" + projects[i] + ".ini";
 			
 			TestFileListener testFileListener =new TestFileListener(testGui, projects[i] + ".ini");
 			testFileListener.LoadProject();
@@ -68,8 +69,8 @@ public class LoadData {
 		    //FileUtils.contentEquals("OldData\\OldGuiGlobalDataKeeper_" + projects[i] + ".txt", "NewData\\NewGuiGlobalDataKeeper_" + projects[i] + ".txt");
 	    
 		    // Compare files
-			BufferedReader reader1 = new BufferedReader(new FileReader("C:\\Users\\Toni\\Desktop\\Soft&Data_Evol\\Plutarch_Parallel_Lives-master_Refactor\\OldData\\OldGuiGlobalDataKeeper_" + projects[i] + ".txt"));
-			BufferedReader reader2 = new BufferedReader(new FileReader("C:\\Users\\Toni\\Desktop\\Soft&Data_Evol\\Plutarch_Parallel_Lives-master_Refactor\\NewData\\NewGuiGlobalDataKeeper_" + projects[i] + ".txt"));
+			BufferedReader reader1 = new BufferedReader(new FileReader("C:\\Users\\gtkal\\Desktop\\Plutarch_Parallel_Lives-master_Refactor\\OldData\\OldGuiGlobalDataKeeper_" + projects[i] + ".txt"));
+			BufferedReader reader2 = new BufferedReader(new FileReader("C:\\Users\\gtkal\\Desktop\\Plutarch_Parallel_Lives-master_Refactor\\NewData\\NewGuiGlobalDataKeeper_" + projects[i] + ".txt"));
 			
 			String line1 = reader1.readLine();
 	        String line2 = reader2.readLine();
@@ -104,5 +105,5 @@ public class LoadData {
 	        reader2.close();
 	        System.out.println("TEST finished");
 	    }
-	}
+	}*/
 }

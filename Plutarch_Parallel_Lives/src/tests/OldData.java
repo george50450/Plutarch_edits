@@ -11,7 +11,7 @@ import gui.mainEngine.Gui;
 import data.dataKeeper.GlobalDataKeeper;
 
 public class OldData {
-	
+	/*
 	Gui testGui;
 	GlobalDataKeeper globalDataKeeper;
 	String[] projects = {"Atlas","biosql","coppermine","ensembl","mwiki","opencart","phpBB","typo3"};
@@ -24,7 +24,7 @@ public class OldData {
 	    testGui = new Gui();
 	    
 	    for (int i=0; i<projects.length; i++) {
-	    	String path = "C:\\Users\\Toni\\Desktop\\Soft&Data_Evol\\Plutarch_Parallel_Lives-master\\filesHandler\\inis\\" + projects[i] + ".ini";
+	    	String path = "C:\\Users\\gtkal\\Desktop\\new_test_github\\Plutarch_edits-master\\Plutarch_Parallel_Lives\\filesHandler\\inis" + projects[i] + ".ini";
 		    testGui.importData(path); 
 		    
 			// Creating a File object that represents the disk file.
@@ -58,5 +58,5 @@ public class OldData {
 		    
 		    //FileUtils.contentEquals(file1,file2);
 	    }
-	}
+	}*/
 }
