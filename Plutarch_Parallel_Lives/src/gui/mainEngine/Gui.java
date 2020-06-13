@@ -91,7 +91,6 @@ public class Gui extends JFrame {
 	private int columnWidth=1;
 	private ArrayList<String> tablesSelected = new ArrayList<String>();
 	private boolean showingPld=false;
-	private JButton undoButton;
 	private JMenu mnProject;
 	private JMenuItem mntmInfo;
 	protected JButton buttonHelp;
@@ -113,6 +112,8 @@ public class Gui extends JFrame {
 	}
 	
 	
+	
+
 	/**
 	 * Create the frame.
 	 */
@@ -132,7 +133,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmCreateProject = new JMenuItem("Create Project");
 		mntmCreateProject.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FileActions fileAction = new FileActions(Gui.this,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
+				FileActions fileAction = new FileActions(Gui.this,mnProject,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
 				fileAction.createProjectAction();	            
 			}
 		});
@@ -142,7 +143,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmLoadProject = new JMenuItem("Load Project");
 		mntmLoadProject.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FileActions fileAction = new FileActions(Gui.this,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
+				FileActions fileAction = new FileActions(Gui.this,mnProject,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
 				fileAction.loadProjectAction();		
 			}
 		});
@@ -152,7 +153,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmEditProject = new JMenuItem("Edit Project");
 		mntmEditProject.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FileActions fileAction = new FileActions(Gui.this,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
+				FileActions fileAction = new FileActions(Gui.this,mnProject,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
 				fileAction.editProjectAction();
 				
 			}
@@ -167,7 +168,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowGeneralLifetimeIDU = new JMenuItem("Show PLD");
 		mntmShowGeneralLifetimeIDU.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showPLD();
 			}
 		});
@@ -177,7 +178,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowGeneralLifetimePhasesPLD = new JMenuItem("Show Phases PLD");
 		mntmShowGeneralLifetimePhasesPLD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showPhasesPLD();
 				
 			}
@@ -188,7 +189,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowGeneralLifetimePhasesWithClustersPLD = new JMenuItem("Show Phases With Clusters PLD");
 		mntmShowGeneralLifetimePhasesWithClustersPLD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showPhasesWithClustersPLD();
 			}
 		});
@@ -199,7 +200,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowLifetimeTable = new JMenuItem("Show Full Detailed LifeTime Table");
 		mntmShowLifetimeTable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showDetailedLifeTimeTable();
 			}
 		});
@@ -360,22 +361,7 @@ public class Gui extends JFrame {
 		showThisToPopup.setVisible(false);
 		
 		
-		undoButton = new JButton("Undo");
-		undoButton.setBounds(680, 560, 100, 30);
-		
-		undoButton.addMouseListener(new MouseAdapter() {
-			@Override
-			   public void mouseClicked(MouseEvent e) {
-				if (firstLevelUndoColumnsZoomArea!=null) {
-					finalColumnsZoomArea=firstLevelUndoColumnsZoomArea;
-					finalRowsZoomArea=firstLevelUndoRowsZoomArea;
-					makeZoomAreaTableForCluster(finalColumnsZoomArea, finalRowsZoomArea);
-				}
-				
-			}
-		});
-		
-		undoButton.setVisible(false);
+	
 		
 		uniformlyDistributedButton = jItemsGenerator.createJButton("Same Width", 980, 0, 120, 30);
 		
@@ -401,7 +387,6 @@ public class Gui extends JFrame {
 		notUniformlyDistributedButton.setVisible(false);
 		
 		lifeTimePanel.add(zoomInButton);
-		lifeTimePanel.add(undoButton);
 		lifeTimePanel.add(zoomOutButton);
 		lifeTimePanel.add(uniformlyDistributedButton);
 		lifeTimePanel.add(notUniformlyDistributedButton);
@@ -654,7 +639,6 @@ public class Gui extends JFrame {
 		showingPld=false;
 		int numberOfColumns=finalRowsZoomArea[0].length;
 		int numberOfRows=finalRowsZoomArea.length;
-		undoButton.setVisible(true);
 		
 		final String[][] rowsZoom=new String[numberOfRows][numberOfColumns];
 		
@@ -994,6 +978,7 @@ public class Gui extends JFrame {
 		this.currentProject = projectName;
 		this.projectName = projectName;
 	}
+	
 	public void setDatasetTxt(String datasetTxt)
 	{
 		this.datasetTxt = datasetTxt;
