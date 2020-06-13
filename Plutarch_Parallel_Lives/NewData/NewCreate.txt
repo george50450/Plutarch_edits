@@ -1,0 +1,6 @@
+Project-name:projectNameTest
+Dataset-txt:filesHandler/datasets/datasetTest.txt
+Input-csv:filesHandler/input/inputCsvTest.csv
+Assessement1-output:filesHandler/output/ass1Test.txt
+Assessement2-output:filesHandler/output/ass2Test.txt
+Transition-xml:filesHandler/transitions/transXmlTest.xml
