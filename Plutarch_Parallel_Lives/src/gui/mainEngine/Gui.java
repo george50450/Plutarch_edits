@@ -113,8 +113,6 @@ public class Gui extends JFrame {
 	}
 	
 	
-	
-
 	/**
 	 * Create the frame.
 	 */
@@ -134,7 +132,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmCreateProject = new JMenuItem("Create Project");
 		mntmCreateProject.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FileActions fileAction = new FileActions(Gui.this,mnProject,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
+				FileActions fileAction = new FileActions(Gui.this,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
 				fileAction.createProjectAction();	            
 			}
 		});
@@ -144,7 +142,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmLoadProject = new JMenuItem("Load Project");
 		mntmLoadProject.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FileActions fileAction = new FileActions(Gui.this,mnProject,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
+				FileActions fileAction = new FileActions(Gui.this,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
 				fileAction.loadProjectAction();		
 			}
 		});
@@ -154,7 +152,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmEditProject = new JMenuItem("Edit Project");
 		mntmEditProject.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				FileActions fileAction = new FileActions(Gui.this,mnProject,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
+				FileActions fileAction = new FileActions(Gui.this,treeLabel,tablesTree, sideMenu, tablesTreePanel, treeScrollPane,    tabbedPane, zoomAreaTable,LifeTimeTable); 
 				fileAction.editProjectAction();
 				
 			}
@@ -169,7 +167,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowGeneralLifetimeIDU = new JMenuItem("Show PLD");
 		mntmShowGeneralLifetimeIDU.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showPLD();
 			}
 		});
@@ -179,7 +177,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowGeneralLifetimePhasesPLD = new JMenuItem("Show Phases PLD");
 		mntmShowGeneralLifetimePhasesPLD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showPhasesPLD();
 				
 			}
@@ -190,7 +188,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowGeneralLifetimePhasesWithClustersPLD = new JMenuItem("Show Phases With Clusters PLD");
 		mntmShowGeneralLifetimePhasesWithClustersPLD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showPhasesWithClustersPLD();
 			}
 		});
@@ -201,7 +199,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowLifetimeTable = new JMenuItem("Show Full Detailed LifeTime Table");
 		mntmShowLifetimeTable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showDetailedLifeTimeTable();
 			}
 		});
@@ -994,6 +992,7 @@ public class Gui extends JFrame {
 	public void setProjectName(String projectName)
 	{
 		this.currentProject = projectName;
+		this.projectName = projectName;
 	}
 	public void setDatasetTxt(String datasetTxt)
 	{
@@ -1007,7 +1006,7 @@ public class Gui extends JFrame {
 	
 	public void setOutputAssessment2(String outputAssessment2)
 	{
-		this.outputAssessment1 = outputAssessment1;
+		this.outputAssessment2 = outputAssessment2;
 	}
 	
 	public void setTransitionsFile(String transitionsFile)
