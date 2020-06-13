@@ -37,14 +37,13 @@ public class CreateProjectJDialog extends JDialog {
 	private JTextField textFieldTransXml;
 	private File fileToCreate=null;
 	private boolean confirm=false;
-
+	private JButton okButton;
 
 	/**
 	 * Launch the application.
 	 */
 	
-	public CreateProjectJDialog(String projectName,String datasetTxt,String inputCsv,String ass1,String ass2,String transXml) {
-		
+	public CreateProjectJDialog(String projectName, String datasetTxt,String inputCsv,String ass1,String ass2,String transXml) {
 		
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -266,7 +265,7 @@ public class CreateProjectJDialog extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("OK");
+				okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						
@@ -377,4 +376,7 @@ public class CreateProjectJDialog extends JDialog {
 		return confirm;
 	}
 	
+	public JButton getButton() {
+		return okButton;
+	}
 }
