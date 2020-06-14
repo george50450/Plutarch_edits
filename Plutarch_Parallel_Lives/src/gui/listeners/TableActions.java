@@ -291,4 +291,29 @@ public class TableActions {
 	public DetailedTableModel getDetailedTableModel() {
 		return detailedTableModel;
 	}
+	
+	public String[][] getFinalRowsZoomArea()
+	{
+		return finalRowsZoomArea;
+	}
+	
+	public String[] getFinalColumnsZoomArea()
+	{
+		return finalColumnsZoomArea;
+	}
+	
+	public GlobalDataKeeper getGlobalDataKeeper()
+	{
+		return globalDataKeeper;
+	}
+	
+	public String[][] getFinalRows()
+	{
+		return finalRows;
+	}
+	
+	public String[] getFinalColumns()
+	{
+		return finalColumns;
+	}
 }
