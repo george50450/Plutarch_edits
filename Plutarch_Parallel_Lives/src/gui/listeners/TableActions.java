@@ -35,7 +35,6 @@ public class TableActions {
 	
 	private GlobalDataKeeper globalDataKeeper=null;
 	private final Gui gui;
-	private JMenu mnTable;
 	private JTabbedPane tabbedPane;
 	
 	private String currentProject=null;
@@ -73,16 +72,9 @@ public class TableActions {
 	private JPanel tablesTreePanel=new JPanel();
 	
 	// Test
-	private JMenuItem mntmShowGeneralLifetimeIDU;
-	
-	private JMenuItem mntmShowGeneralLifetimePhasesPLD;
-	
-	private JMenuItem mntmShowGeneralLifetimePhasesWithClustersPLD;
-	
-	private JMenuItem mntmShowLifetimeTable;
 	private DetailedTableModel detailedTableModel;
 	
-	public TableActions(Gui gui, JMenu mnTable,JLabel treeLabel,  JTree tablesTree, JPanel sideMenu, JPanel tablesTreePanel, JScrollPane treeScrollPane) {
+	public TableActions(Gui gui, JLabel treeLabel,  JTree tablesTree, JPanel sideMenu, JPanel tablesTreePanel, JScrollPane treeScrollPane) {
 		this.gui = gui;
 		this.mnTable = mnTable;
 		this.treeScrollPane = treeScrollPane;
@@ -272,22 +264,6 @@ public class TableActions {
 
 	
 	// For test reasons
-	public JMenuItem getMntmShowGeneralLifetimeIDU() {
-		return mntmShowGeneralLifetimeIDU;
-	}
-	
-	public JMenuItem getMntmShowGeneralLifetimePhasesPLD() {
-		return mntmShowGeneralLifetimePhasesPLD;
-	}
-	
-	public JMenuItem getMntmShowGeneralLifetimePhasesWithClustersPLD() {
-		return mntmShowGeneralLifetimePhasesWithClustersPLD;
-	}
-	
-	public JMenuItem getMntmShowLifetimeTable() {
-		return mntmShowLifetimeTable;
-	}
-	
 	public DetailedTableModel getDetailedTableModel() {
 		return detailedTableModel;
 	}
