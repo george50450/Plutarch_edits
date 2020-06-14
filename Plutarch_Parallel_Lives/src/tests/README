@@ -1,2 +1,10 @@
 In order to execute these tests u have to comment out some GUI-changes stuff:
 
+for Detailed and Edit test
+
+in FillTableManager
+tabbedPane.setSelectedIndex(0); (lines70, 113)
+in FillTreeManager
+treeLabel.setText("Clusters Tree"); (lines 90, 139)
+in TableActions
+tabbedPane.setSelectedIndex(0); (lines 250)
