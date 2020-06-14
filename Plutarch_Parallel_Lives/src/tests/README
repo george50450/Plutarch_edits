@@ -8,3 +8,14 @@ in FillTreeManager
 treeLabel.setText("Clusters Tree"); (lines 90, 139)
 in TableActions
 tabbedPane.setSelectedIndex(0); (lines 250)
+
+
+For ShowPLD test:
+File : FillTableManager.java -> Line : 70, 113
+File : FillTreeManager.java -> Line : 90, 139, 187
+File : TableActions.java -> Line : 100
+
+
+
+
+
