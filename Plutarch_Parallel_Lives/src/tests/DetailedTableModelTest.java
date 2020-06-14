@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -37,6 +38,7 @@ public class DetailedTableModelTest {
 	private JvTable LifeTimeTable=null;
 	private JvTable zoomAreaTable=null;
 	private String halfPath = "NewData/New_Detailed_Table_Model_";
+	final JMenu mnTable = new JMenu("Table");
 	
 	@Test
 	public void test() throws RecognitionException, IOException {
@@ -54,7 +56,7 @@ public class DetailedTableModelTest {
 		    	e.printStackTrace();
 		    }
 		    
-	    	TableActions tableActions = new TableActions(testGui, treeLabel, tablesTree, sideMenu, tablesTreePanel, treeScrollPane);
+		    TableActions tableActions = new TableActions(testGui,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 	    	tableActions.showDetailedLifeTimeTable();
 	    	
 	    	// Creating a File object that represents the disk file.
