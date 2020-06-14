@@ -168,7 +168,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowGeneralLifetimeIDU = new JMenuItem("Show PLD");
 		mntmShowGeneralLifetimeIDU.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showPLD();
 			}
 		});
@@ -178,7 +178,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowGeneralLifetimePhasesPLD = new JMenuItem("Show Phases PLD");
 		mntmShowGeneralLifetimePhasesPLD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showPhasesPLD();
 				
 			}
@@ -189,7 +189,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowGeneralLifetimePhasesWithClustersPLD = new JMenuItem("Show Phases With Clusters PLD");
 		mntmShowGeneralLifetimePhasesWithClustersPLD.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showPhasesWithClustersPLD();
 			}
 		});
@@ -200,7 +200,7 @@ public class Gui extends JFrame {
 		JMenuItem mntmShowLifetimeTable = new JMenuItem("Show Full Detailed LifeTime Table");
 		mntmShowLifetimeTable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TableActions tableAction = new TableActions(Gui.this,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+				TableActions tableAction = new TableActions(Gui.this,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 				tableAction.showDetailedLifeTimeTable();
 			}
 		});
