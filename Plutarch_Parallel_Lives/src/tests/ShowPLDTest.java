@@ -61,7 +61,7 @@ public class ShowPLDTest {
 		    
 		    globalDataKeeper = testGui.getGlobalDataKeeper();
 		    
-		    TableActions tableAction = new TableActions(testGui,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+		    TableActions tableAction = new TableActions(testGui,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 			tableAction.showPLD();
 			
 			// Creating a File object that represents the disk file.
