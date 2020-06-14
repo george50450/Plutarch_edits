@@ -56,7 +56,7 @@ public class DetailedTableModelTest {
 		    	e.printStackTrace();
 		    }
 		    
-		    TableActions tableActions = new TableActions(testGui,mnTable,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
+		    TableActions tableActions = new TableActions(testGui,treeLabel,tablesTree,sideMenu,tablesTreePanel,treeScrollPane);
 	    	tableActions.showDetailedLifeTimeTable();
 	    	
 	    	// Creating a File object that represents the disk file.
