@@ -1,6 +1,6 @@
 In order to execute these tests u have to comment out some GUI-changes stuff:
 
-for Detailed and Edit test
+for DetailedTableModel test
 
 in FillTableManager
 tabbedPane.setSelectedIndex(0); (lines70, 113)
