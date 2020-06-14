@@ -1,12 +1,7 @@
 package gui.listeners;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -74,9 +69,8 @@ public class TableActions {
 	// Test
 	private DetailedTableModel detailedTableModel;
 	
-	public TableActions(Gui gui, JLabel treeLabel,  JTree tablesTree, JPanel sideMenu, JPanel tablesTreePanel, JScrollPane treeScrollPane) {
+	public TableActions(Gui gui, JLabel treeLabel, JTree tablesTree, JPanel sideMenu, JPanel tablesTreePanel, JScrollPane treeScrollPane) {
 		this.gui = gui;
-		this.mnTable = mnTable;
 		this.treeScrollPane = treeScrollPane;
 		this.treeLabel = treeLabel;
 		this.tablesTree = tablesTree;
@@ -262,8 +256,9 @@ public class TableActions {
 	}
 
 
-	
+
 	// For test reasons
+	
 	public DetailedTableModel getDetailedTableModel() {
 		return detailedTableModel;
 	}
